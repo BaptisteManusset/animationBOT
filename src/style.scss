@@ -2,6 +2,11 @@ $lockOpenningTime: 1.5s;
 
 svg {
   width: 200px;
+  text {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+  }
+
   * {
 	transform-origin: center center;
   }
@@ -99,23 +104,44 @@ svg.padlock {
 	}
   }
   .group-ticket {
+
 	path {
 	  animation: group-ticket 3s linear;
 	  fill: #ffecb3;
-	  &.big {
-		animation: group-ticket 3s linear;
-	  }
 	  @keyframes group-ticket {
 		from {
 		  transform: scale(0);
+		  opacity: 0;
 		}
-		75% {
+		90% {
 		  transform: scale(0);
+		  opacity: .5;
+
+		}
+		97% {
+		  transform: scaleX(0.7);
 		}
 		to {
+		  opacity: 1;
 		  transform: scale(1);
 		}
 
+	  }
+
+	  &.big {
+		animation: group-ticket-big 3s linear;
+		@keyframes group-ticket-big {
+		  from {
+			transform: scale(0);
+		  }
+		  70% {
+			transform: scale(0);
+		  }
+		  to {
+			transform: scale(1);
+		  }
+
+		}
 	  }
 	}
   }
