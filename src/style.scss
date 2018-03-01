@@ -6,15 +6,15 @@ svg {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
   }
-
   * {
 	transform-origin: center center;
   }
-
 }
 
 svg.padlock {
-
+  * {
+	animation-delay: 3s !important;
+  }
   .padlock-top {
 	animation-name: padlock-unlock-top;
 	animation-duration: $lockOpenningTime;
@@ -26,6 +26,26 @@ svg.padlock {
 	animation-duration: $lockOpenningTime;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
+  }
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  animation-iteration-count: infinite;
+  backface-visibility: hidden;
+  @keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-5px, 0, 0) skew(3deg, -2deg);
+	}
+
+	20%, 80% {
+	  transform: translate3d(5px, 0, 0) skew(-1deg, 2deg);
+	}
+
+	30%, 50%, 70% {
+	  transform: translate3d(-5px, 0, 0) skew(2deg, -3deg);
+	}
+
+	40%, 60% {
+	  transform: translate3d(5px, 0, 0) skew(-3deg, 2deg);
+	}
   }
 }
 
@@ -47,7 +67,6 @@ svg.padlock {
 	  overflow: hidden;
 	  stroke-width: 5px;
 	  stroke: #0c5167;
-	  //fill: transparent;
 	  animation: dash 3s 1 linear;
 	  animation-timing-function: linear;
 	  stroke-linecap: round;
@@ -60,7 +79,6 @@ svg.padlock {
 		  fill: transparent;
 		  transform: rotateY(0);
 		  opacity: 0;
-
 		}
 		30% {
 		  opacity: 1;
@@ -78,22 +96,20 @@ svg.padlock {
 	}
   }
 
-  .etoile {
-	animation: etoile 3s linear;
+  .cocarde {
+	animation: cocarde 3s linear;
 	polygon {
 	  stroke: #0c5167;
 	  stroke-width: 10px;
 	  fill: #ffd54f;
 	  stroke-linecap: round;
-
-	  @keyframes etoile {
+	  @keyframes cocarde {
 		from {
 		  transform: scale(0);
 		}
 		50% {
 		  transform: scale(0);
 		  stroke-dasharray: 0 50 !important;
-
 		}
 		to {
 		  stroke-dasharray: 50 50 !important;
@@ -103,6 +119,7 @@ svg.padlock {
 	  }
 	}
   }
+
   .group-ticket {
 
 	path {
@@ -143,28 +160,28 @@ svg.padlock {
 
 		}
 	  }
+	  &.bottom {
+		animation: group-ticket 3.2s linear;
+	  }
 	}
   }
   .ticket-cls-1 {
 	stroke: #0c5167;
 	stroke-width: 10px;
   }
-  .badge-contour {
-	display: none;
-  }
 }
 
-@keyframes badge-spawn {
-  from {
-	opacity: 0;
+.mobile-container {
+  background: lightgrey;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  svg {
+	position: absolute;
   }
-  to {
-	opacity: 1;
-	stroke-width: 10px;
-	fill: red;
-  }
+
 }
 
-.circle-clou {
+.hidden {
   display: none;
 }

@@ -1,52 +1,17 @@
 'use strict';
-
-var s = new Snap('.gotham-city'),
-	gothamCity,
-	initialise,
-	loopAnimation,
-	rotateElems,
-	setupLightAnim;
-
-
-// shim layer with setTimeout fallback
-window.requestAnimFrame = (function () {
-	return window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		function (callback) {
-			window.setTimeout(callback, 1000 / 60);
-		};
-})();
-
-Snap.load('padlock.svg', function (response) {
-	gothamCity = response;
-
-	s.append(gothamCity);
-	rotateElems = s.selectAll('.padlock-top');
-
-	initialise();
-});
-
-initialise = function () {
-	loopAnimation();
-	console.log(s);
-};
-
-loopAnimation = function () {
-	setupLightAnim();
-	setTimeout(loopAnimation, 7000);
-};
-
-setupLightAnim = function () {
-	rotateElems.forEach(function (elem) {
-		elem.transform('r60,250,453 s0,0');
-	});
-
+var padlock = $(".padlock");
+var ticket = $(".ticket");
+$(".triggerpadlock").click(function () {
+	console.log("click");
+	$(".mobile-container").html(padlock);
+	$(padlock).show();
 	setTimeout(function () {
-		window.requestAnimFrame(function () {
-			rotateElems.animate({
-				transform: 'r0,250,453 s1,1'
-			}, 1500, mina.elastic);
-		});
-	}, 800);
-};
+		$(".mobile-container").append(ticket);
+		setTimeout(function () {
+
+			$(".mobile-container .padlock").animate({
+				opacity: 0
+			});
+		}, 1000);
+	}, 1950);
+});
