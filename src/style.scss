@@ -1,0 +1,144 @@
+$lockOpenningTime: 1.5s;
+
+svg {
+  width: 200px;
+  * {
+	transform-origin: center center;
+  }
+
+}
+
+svg.padlock {
+
+  .padlock-top {
+	animation-name: padlock-unlock-top;
+	animation-duration: $lockOpenningTime;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+  }
+  .padlock-bottom {
+	animation-name: padlock-unlock-bottom;
+	animation-duration: $lockOpenningTime;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+  }
+}
+
+@keyframes padlock-unlock-top {
+  to {
+	transform: translateY(-50px);
+  }
+}
+
+@keyframes padlock-unlock-bottom {
+  to {
+	transform: translateY(30px);
+  }
+}
+
+#ticket {
+  .badge {
+	&-background {
+	  overflow: hidden;
+	  stroke-width: 5px;
+	  stroke: #0c5167;
+	  //fill: transparent;
+	  animation: dash 3s 1 linear;
+	  animation-timing-function: linear;
+	  stroke-linecap: round;
+	  stroke-miterlimit: 3;
+	  fill: #ffd54f;
+	  @keyframes dash {
+		from {
+		  stroke-dasharray: 0 1178;
+		  stroke-dashoffset: 1178;
+		  fill: transparent;
+		  transform: rotateY(0);
+		  opacity: 0;
+
+		}
+		30% {
+		  opacity: 1;
+		}
+		50% {
+		  fill: transparent;
+		}
+		to {
+		  stroke-dasharray: 1178 1178;
+		  stroke-dashoffset: 0;
+		  transform: rotateY(360deg);
+
+		}
+	  }
+	}
+  }
+
+  .etoile {
+	animation: etoile 3s linear;
+	polygon {
+	  stroke: #0c5167;
+	  stroke-width: 10px;
+	  fill: #ffd54f;
+	  stroke-linecap: round;
+
+	  @keyframes etoile {
+		from {
+		  transform: scale(0);
+		}
+		50% {
+		  transform: scale(0);
+		  stroke-dasharray: 0 50 !important;
+
+		}
+		to {
+		  stroke-dasharray: 50 50 !important;
+		  stroke-dashoffset: 0;
+		  transform: scale(1);
+		}
+	  }
+	}
+  }
+  .group-ticket {
+	path {
+	  animation: group-ticket 3s linear;
+	  fill: #ffecb3;
+	  &.big {
+		animation: group-ticket 3s linear;
+	  }
+	  @keyframes group-ticket {
+		from {
+		  transform: scale(0);
+		}
+		75% {
+		  transform: scale(0);
+		}
+		to {
+		  transform: scale(1);
+		}
+
+	  }
+	}
+  }
+  .ticket-cls-1 {
+	stroke: #0c5167;
+	stroke-width: 10px;
+  }
+  .badge-contour {
+	display: none;
+  }
+}
+
+@keyframes badge-spawn {
+  from {
+	opacity: 0;
+  }
+  to {
+	opacity: 1;
+	stroke-width: 10px;
+	fill: red;
+  }
+}
+
+.circle-clou {
+  display: none;
+}
