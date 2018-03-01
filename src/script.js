@@ -13,5 +13,5 @@ $(".triggerpadlock").click(function () {
 				opacity: 0
 			});
 		}, 1000);
-	}, 1950);
+	}, 3000);
 });
