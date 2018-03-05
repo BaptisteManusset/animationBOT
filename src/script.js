@@ -7,11 +7,20 @@ $(".triggerpadlock").click(function () {
 	$(padlock).show();
 	setTimeout(function () {
 		$(".mobile-container").append(ticket);
+		$(padlock).animate({
+			opacity: 0
+		});
 		setTimeout(function () {
-
 			$(".mobile-container .padlock").animate({
-				opacity: 0
+				opacity: 0,
+				transform: scale(0.1)
 			});
+
+
 		}, 1000);
-	}, 3000);
+	}, 2000);
+});
+
+$(".reset").click(function () {
+	$(".mobile-container svg").append(".hidden");
 });

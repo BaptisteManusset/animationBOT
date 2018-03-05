@@ -1,4 +1,4 @@
-$lockOpenningTime: 1.5s;
+$lockOpenningTime: 1s;
 
 svg {
   width: 200px;
@@ -13,24 +13,34 @@ svg {
 
 svg.padlock {
   z-index: 10;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  animation-iteration-count: infinite;
+  backface-visibility: hidden;
   * {
-	animation-delay: 3s !important;
+	animation-delay: 1.5s !important;
   }
   .padlock-top {
 	animation-name: padlock-unlock-top;
 	animation-duration: $lockOpenningTime;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-out;
+	@keyframes padlock-unlock-top {
+	  to {
+		transform: translateY(-50px);
+	  }
+	}
   }
   .padlock-bottom {
 	animation-name: padlock-unlock-bottom;
 	animation-duration: $lockOpenningTime;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
+	@keyframes padlock-unlock-bottom {
+	  to {
+		transform: translateY(30px);
+	  }
+	}
   }
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-  animation-iteration-count: infinite;
-  backface-visibility: hidden;
   @keyframes shake {
 	10%, 90% {
 	  transform: translate3d(-5px, 0, 0) skew(3deg, -2deg);
@@ -48,23 +58,11 @@ svg.padlock {
 	  transform: translate3d(5px, 0, 0) skew(-3deg, 2deg);
 	}
 	95% {
-	  transform: translate3d(-20px, 0, 0) skew(3deg, -2deg);
+	  transform: translate3d(-5px, 0, 0) skew(3deg, -2deg);
 	}
 	99% {
 	  transform: translate3d(-5px, 0, 0) skew(3deg, -2deg);
 	}
-  }
-}
-
-@keyframes padlock-unlock-top {
-  to {
-	transform: translateY(-50px);
-  }
-}
-
-@keyframes padlock-unlock-bottom {
-  to {
-	transform: translateY(30px);
   }
 }
 
@@ -128,7 +126,6 @@ svg.padlock {
   }
 
   .group-ticket {
-
 	path {
 	  animation: group-ticket 3s linear;
 	  fill: #ffecb3;
@@ -179,14 +176,12 @@ svg.padlock {
 }
 
 .mobile-container {
-  background: lightgrey;
   width: 200px;
   height: 200px;
   position: relative;
   svg {
 	position: absolute;
   }
-
 }
 
 .hidden {
