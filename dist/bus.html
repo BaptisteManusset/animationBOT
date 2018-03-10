@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		svg {
+			height: 700px;
+			margin: auto;
+			display: block;
+		}
+
+		.corps {
+			animation: mouvement 1.5s infinite;
+			animation-direction: alternate;
+			transform-origin: bottom center;
+		}
+
+		.roue {
+			animation: roue .8s infinite;
+			animation-direction: alternate;
+		}
+
+		.roue:first-of-type {
+			animation-delay: 0.5s;
+		}
+
+		@keyframes roue {
+			from {
+				transform: translateY(-5px);
+			}
+			to {
+				transform: translateY(5px);
+			}
+		}
+
+		@keyframes mouvement {
+			from {
+				transform: translateY(-4px);
+			}
+			to {
+				transform: translateY(5px);
+			}
+		}
+	</style>
+</head>
+<body>
+<svg viewBox="-20 -20 568.54 705.07">
+	<defs>
+		<clipPath id="a">
+			<rect x="85.27" y="119.59" width="376" height="396" rx="40" ry="40" style="fill:#ffd54f;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		</clipPath>
+		<clipPath id="b">
+			<rect x="85.27" y="183.48" width="376" height="198" style="fill:#ffd54f;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		</clipPath>
+	</defs>
+	<path class="ground" d="M479,557.5v-3a8.51,8.51,0,0,0-8.5-8.5H80.5a8.51,8.51,0,0,0-8.5,8.5v3a8.51,8.51,0,0,0,8.5,8.5h22a8.51,8.51,0,0,1,8.5,8.5v3a8.51,8.51,0,0,1-8.5,8.5h0a8.51,8.51,0,0,0-8.5,8.5v3a8.51,8.51,0,0,0,8.5,8.5h21a8.51,8.51,0,0,1,8.5,8.5v3a8.51,8.51,0,0,0,8.5,8.5h12a8.51,8.51,0,0,1,8.5,8.5v3a8.51,8.51,0,0,0,8.5,8.5h29a8.51,8.51,0,0,1,8.5,8.5v3a8.51,8.51,0,0,0,8.5,8.5h108a8.51,8.51,0,0,0,8.5-8.5v-3a8.51,8.51,0,0,1,8.5-8.5h28a8.51,8.51,0,0,0,8.5-8.5v-3a8.51,8.51,0,0,1,8.5-8.5h52a8.51,8.51,0,0,0,8.5-8.5v-3a8.51,8.51,0,0,1,8.5-8.5h16a8.51,8.51,0,0,0,8.5-8.5v-3a8.51,8.51,0,0,0-8.5-8.5h-23a8.51,8.51,0,0,1-8.5-8.5v-3a8.51,8.51,0,0,1,8.5-8.5h23A8.51,8.51,0,0,0,479,557.5Z" style="fill:#ffecb3"/>
+
+
+	<rect x="120.77" y="500.48" width="65" height="65" rx="12" ry="12" style="fill:#666;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px" class="roue"/>
+
+
+	<rect x="360.77" y="500.48" width="65" height="65" rx="12" ry="12" style="fill:#666;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px" class="roue"/>
+
+
+	<g class="corps">
+		<rect x="85.27" y="119.59" width="376" height="396" rx="40" ry="40" style="fill:#ffd54f"/>
+		<g style="clip-path:url(#a)">
+			<rect x="49" y="92.98" width="454" height="438" style="fill:#ffd54f;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+			<rect x="85.27" y="183.48" width="376" height="198" style="fill:#ffd54f"/>
+			<g style="clip-path:url(#b)">
+				<rect x="17.5" y="130.48" width="611" height="403" style="fill:#65a7ff;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+			</g>
+			<rect x="85.27" y="183.48" width="376" height="198" style="fill:none;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+			<rect x="75.5" y="477.48" width="395" height="43" style="fill:#666;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		</g class="corps">
+		<rect x="85.27" y="119.59" width="376" height="396" rx="40" ry="40" style="fill:none;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="141.27" y="134.48" width="264" height="34" rx="12" ry="12" style="fill:#666;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="107" y="428.98" width="41" height="28" rx="14" ry="14" style="fill:#ffecb3;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+
+		<rect x="397" y="428.98" width="41" height="28" rx="14" ry="14" style="fill:#ffecb3;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="162" y="428.98" width="28" height="28" rx="13.69" ry="13.69" style="fill:#ffecb3;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="354" y="428.98" width="29" height="28" rx="13.69" ry="13.69" style="fill:#ffecb3;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="214" y="397.98" width="122" height="85" rx="12" ry="12" style="fill:#ffecb3;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="24.27" y="192.48" width="40" height="114.5" rx="12" ry="12" style="fill:#ffd54f;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<rect x="484.27" y="192.73" width="40" height="114" rx="12" ry="12" style="fill:#ffd54f;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<path d="M48.5,191.48a35,35,0,0,1,35-35" style="fill:none;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+		<path d="M498.5,191.48a35,35,0,0,0-35-35" style="fill:none;stroke:#0c5167;stroke-miterlimit:10;stroke-width:7px"/>
+	</g>
+</svg>
+
+</body>
+</html>
