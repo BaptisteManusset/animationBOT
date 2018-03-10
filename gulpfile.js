@@ -34,7 +34,7 @@ gulp.task('js', function () {
 		]))
 		.pipe(plugins.uglify())
 		.on('error', swallowError)
-		.pipe(plugins.concat('script.js', {newLine: ';'}))
+		// .pipe(plugins.concat('script.js', {newLine: ';'}))
 		.pipe(gulp.dest(destination))
 		.pipe(browserSync.reload({
 			stream: true

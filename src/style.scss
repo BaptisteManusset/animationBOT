@@ -1,7 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 $lockOpenningTime: 1s;
 
 svg {
-  width: 200px;
+  height: 400px;
   text {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
@@ -14,7 +20,7 @@ svg {
 svg.padlock {
   z-index: 10;
   animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 5;
   backface-visibility: hidden;
   * {
 	animation-delay: 1.5s !important;
@@ -175,10 +181,13 @@ svg.padlock {
   }
 }
 
+.triggerpadlock {
+  padding: 10px;
+}
+
 .mobile-container {
-  width: 200px;
-  height: 200px;
-  position: relative;
+  height: 300px;
+  margin-top: 30px;
   svg {
 	position: absolute;
   }
@@ -186,4 +195,55 @@ svg.padlock {
 
 .hidden {
   display: none;
+}
+
+/*!************************************************************************/
+
+body {
+  width: 500px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.imagepreview {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 300px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+  padding: 0 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #ffd54f;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+​ input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid #ffd54f;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+
+.question {
+  background: #ffd54f;
+  padding: .5rem;
+  display: inline-block;
 }
